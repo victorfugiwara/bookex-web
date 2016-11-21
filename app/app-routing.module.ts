@@ -11,15 +11,19 @@ import {
 	CombinationsComponent
 } from './components';
 
+import { AuthService } from './services';
+
+
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home',         component: HomeComponent },
   { path: 'register',     component: RegisterComponent },
   { path: 'login',        component: LoginComponent },
-  { path: 'edit-profile', component: EditProfileComponent },
-  { path: 'library',      component: LibraryComponent },
-  { path: 'wishes',       component: WishesComponent },
-  { path: 'combinations', component: CombinationsComponent },
+
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home',         component: HomeComponent, canActivate: [AuthService] },
+  { path: 'edit-profile', component: EditProfileComponent, canActivate: [AuthService] },
+  { path: 'library',      component: LibraryComponent, canActivate: [AuthService] },
+  { path: 'wishes',       component: WishesComponent, canActivate: [AuthService] },
+  { path: 'combinations', component: CombinationsComponent, canActivate: [AuthService] },
 ];
 
 @NgModule({

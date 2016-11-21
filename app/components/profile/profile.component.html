@@ -1,6 +1,13 @@
 <div class="panel panel-default">
-  <div class="panel-body">
-  	<p> Perfil do usuário </p>
-  	<p> Vai ter a foto e o link pra alterar os dados do perfil </p>
-  </div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-xs-3 col-sm-2">
+				<img src="{{ user.picture }}" class="img-avatar">
+			</div>
+			<div class="col-xs-9 col-sm-10">
+				<p> {{ user.firstName }} {{ user.lastName }} </p>
+				<p> <a [routerLink]="['/edit-profile']"> Editar perfil </a> </p>
+			</div>
+		</div>
+	</div>
 </div>

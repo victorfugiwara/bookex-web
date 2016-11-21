@@ -1,1 +1,54 @@
-Registro de um novo usuário
+<div class="col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2">
+  <div class="well">
+
+    <form (ngSubmit)="confirm()" #registerForm="ngForm">
+      <fieldset>
+
+        <legend>Registro</legend>
+
+        <div class="form-group">
+          <label for="username" class="col-md-2 control-label">Usuário</label>
+
+          <div class="col-md-10">
+            <input type="text" class="form-control" id="username" name="username" placeholder="Nome de usuário" [(ngModel)]="username" required >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="col-md-2 control-label">Email</label>
+
+          <div class="col-md-10">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" [(ngModel)]="email" required >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="col-md-2 control-label">Senha</label>
+
+          <div class="col-md-10">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Senha" [(ngModel)]="password" required >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword" class="col-md-2 control-label">Confirmar senha</label>
+
+          <div class="col-md-10">
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmar senha" [(ngModel)]="confirmPassword" required >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <span *ngIf="errorMessage" style="color: red;"> {{ errorMessage }} </span>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-10 col-md-offset-2">
+            <button type="submit" class="btn btn-primary" [disabled]="! registerForm.form.valid"> Confirmar </button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #0000ff;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442;
+}
+
+.img-avatar {
+	max-width: 100%;
+	max-height: 150px;
+	height: auto;
+}

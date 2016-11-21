@@ -11,19 +11,19 @@
 
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav navbar-left">
-        <li><a routerLink="/library">Meus livros</a></li>
-        <li><a routerLink="/wishes">Desejos</a></li>
-        <li><a routerLink="/combinations">Trocas</a></li>
+        <li><a routerLink="/library" *ngIf="_loginService.isLogged()">Meus livros</a></li>
+        <li><a routerLink="/wishes" *ngIf="_loginService.isLogged()">Desejos</a></li>
+        <li><a routerLink="/combinations" *ngIf="_loginService.isLogged()">Trocas</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="/register">Registrar</a></li>
-        <li><a routerLink="/login">Login</a></li>
-        <li><a routerLink="/logout">Logout</a></li>
+        <li><a routerLink="/register" *ngIf="! _loginService.isLogged()" >Registrar</a></li>
+        <li><a routerLink="/login" *ngIf="! _loginService.isLogged()" >Login</a></li>
+        <li><a routerLink="/login" (click)="logout()" *ngIf="_loginService.isLogged()" >Logout</a></li>
       </ul>
     </div>
   </div>
 </div>
 
-<profile> </profile>
+<profile [user]="_loginService.loggedUser" *ngIf="_loginService.isLogged()"> </profile>
 
 <router-outlet> </router-outlet>
