@@ -4,3 +4,4 @@ export * from './models/category';
 export * from './models/library';
 export * from './models/profile';
 export * from './models/wish';
+export * from './models/combination';

@@ -1,1 +1,32 @@
-Listagem/registros dos livros que o usuário quer
+<div class="container" style="width: 100%;">
+	<div class="row" >
+		<div class="well">
+			<suggestion [query]="query" [dataList]="booksArray" showFields="id, name" inputPlaceHolder="Pesquise um livro" (selectItem)="onSelectBook($event)"> </suggestion>
+		</div>
+	</div>
+
+	<div class="row" >
+
+		<div *ngFor="let item of userWishes" class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+
+			<div class="panel panel-default library-book">
+				<div class="panel-heading" >
+					<h3> {{item.book.name}} </h3>
+				</div>
+
+				<div class="panel-body">
+					<img src="{{item.book.picture}}" class="img-responsive img-thumbnail">
+					<br>
+					<button class="btn btn-raised btn-danger" (click)="removeWish(item)"> Remover </button>
+				</div>
+
+				<div class="panel-footer">
+					<h3> {{item.book.author.fullName()}} </h3>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

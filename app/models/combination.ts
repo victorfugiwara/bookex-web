@@ -1,19 +1,18 @@
 import { Book } from './book';
 import { Profile } from './profile';
 
-export class Wish {
+export class Combination {
 
-	id: number;
 	profile: Profile;
-	book: Book;
+	book_wish: Book;
+	book_library: Book;
 
     constructor(json?) {
         if (json) {
-            this.id = json.id;
-            
             this.profile = new Profile(json.profile);
 
-            this.book = new Book(json.book);
+            this.book_wish = new Book(json.book_wish);
+            this.book_library = new Book(json.book_library);
         }
     }
 }

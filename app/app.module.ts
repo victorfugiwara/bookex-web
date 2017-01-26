@@ -13,6 +13,7 @@ import { Header } from './util/header';
 import { Metodos } from './util/metodos';
 
 import { 
+  SuggestionComponent,
   RegisterComponent,
   LoginComponent,
   HomeComponent,
@@ -26,7 +27,11 @@ import {
 import {
   AuthService,
   LoginService,
-  ProfileService
+  ProfileService,
+  BookService,
+  LibraryService,
+  WishesService,
+  CombinationService
 } from './services';
 
 
@@ -40,6 +45,7 @@ import {
 
   declarations: [ 
   	AppComponent,
+    SuggestionComponent,
     RegisterComponent,
     LoginComponent,
     HomeComponent,
@@ -56,7 +62,11 @@ import {
     Header,
     AuthService,
     LoginService,
-    ProfileService
+    ProfileService,
+    BookService,
+    LibraryService,
+    WishesService,
+    CombinationService
   ],
   
   bootstrap: [ 

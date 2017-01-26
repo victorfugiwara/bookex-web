@@ -1,1 +1,50 @@
-combinações para trocas
+<div class="container" style="width: 100%;">
+	<div class="row" >
+
+		<div *ngFor="let item of combinations" class="col-xs-12 col-sm-8 col-md-6 col-lg-6 text-center" >
+
+			<div class="row" style="padding: 10px;">
+
+				<div class="panel panel-default library-book col-lg-4">
+					<div class="panel-heading" >
+						<h3> {{item.book_library.name}} </h3>
+					</div>
+
+					<div class="panel-body">
+						<img src="{{item.book_library.picture}}" class="img-responsive img-thumbnail">
+					</div>
+
+					<div class="panel-footer">
+						<h3> {{item.book_library.author.fullName()}} </h3>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<button class="btn btn-raised btn-danger" (click)="trade(item)"> Trocar </button>
+				</div>
+
+				<div class="panel panel-default library-book col-lg-4" >
+					<div class="panel-heading" >
+						<h3> {{item.book_wish.name}} </h3>
+					</div>
+
+					<div class="panel-body">
+						<img src="{{item.book_wish.picture}}" class="img-responsive img-thumbnail">
+					</div>
+
+					<div class="panel-footer">
+						<h3> {{item.book_wish.author.fullName()}} </h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				{{item.profile.email}}
+			</div>
+			
+
+		</div>
+
+	</div>
+
+</div>
